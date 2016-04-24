@@ -1,3 +1,6 @@
+package septa1;
+
+import java.util.Calendar;
 import java.util.Scanner;
 import java.io.*;
 
@@ -29,7 +32,7 @@ public class Menu {
 				break;
 			
 			case 2: 
-				artantica();
+				antarctica();
 				break;
 				
 			case 3: 
@@ -64,7 +67,7 @@ public class Menu {
 			case 1: 
 				System.out.println("\n" + "     Choose City     ");
 				System.out.println("Melbourne				1");
-				System.out.println("Geelong				2");
+				System.out.println("Geelong					2");
 				System.out.println("\n" +"Your choice: ");
 				
 				Scanner scanner2 = new Scanner(System.in);
@@ -74,7 +77,7 @@ public class Menu {
 			case 2: 
 				System.out.println("\n" + "     Choose City     ");
 				System.out.println("Brisbane				1");
-				System.out.println("Cairns				2");
+				System.out.println("Cairns					2");
 				System.out.println("\n" +"Your choice: ");
 				
 				Scanner scanner3 = new Scanner(System.in);
@@ -83,12 +86,11 @@ public class Menu {
 			}
 		}
 		
-		public static void artantica()
+		public static void antarctica()
 		{
 			System.out.println("\n" + "     Choose Location     ");
 			System.out.println("Casey				1");
 			System.out.println("Davis				2");
-			System.out.println("Macquarie Island			3");
 			System.out.println("\n" +"Your choice: ");
 			
 			Scanner scanner = new Scanner(System.in);
@@ -96,12 +98,21 @@ public class Menu {
 			
 			switch(choice){
 			case 1: 
+				String Location = new String("Casey");
+				Calendar cal = Calendar.getInstance();
+				//int doM = cal.get(Calendar.DAY_OF_MONTH);
+				int doM = 24;
+				int x = 0;
+				
+				while (x < doM) {
+					Report tempReport = new Report(x);
+					tempReport = Report.BuildReport(Location, tempReport.line);
+					System.out.println(Report.printReport(tempReport));
+					x++;
+				}
 				break;
 			
 			case 2:
-				break;
-				
-			case 3:
 				break;
 			}
 			 

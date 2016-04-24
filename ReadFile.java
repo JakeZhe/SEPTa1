@@ -14,7 +14,6 @@ public class ReadFile {
 		int maxLines = 31;
 		
 		File file = new File(location+"Report.txt");
-		System.out.println(file.getAbsolutePath());
 		String[] lines = new String[maxLines];
 		
 		try {
