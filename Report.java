@@ -1,5 +1,6 @@
 package septa1;
 
+import java.util.Calendar;
 import java.util.StringTokenizer;
 
 public class Report extends ReadFile {
@@ -203,19 +204,32 @@ public class Report extends ReadFile {
 		return report;
 	}
 	
-	public static String printReport (Report report)
+	public static void printReport (String Location)
 	{
 		String string = new String();
-		
-		string = report.date+", "+report.DotW+", "+report.minTemp+", "+report.maxTemp
-				+", "+report.rain+", "+report.evap+", "+report.sun+", "+report.maxWind.dir
-				+", "+report.maxWind.spd+", "+report.maxWindTime+", "+report.amReport.Temp
-				+", "+report.amReport.RH+", "+report.amReport.Cld+", "+report.amReport.Wind.dir
-				+", "+report.amReport.Wind.spd+", "+report.amReport.MSLP+", "+report.pmReport.Temp
-				+", "+report.pmReport.RH+", "+report.pmReport.Cld+", "+report.pmReport.Wind.dir
-				+", "+report.pmReport.Wind.spd+", "+report.pmReport.MSLP;
-		
-		return string;
 
+		//Calendar cal = Calendar.getInstance();
+		//int doM = cal.get(Calendar.DAY_OF_MONTH);
+		int doM = 24;
+		int x = 0;
+		
+		System.out.println("Date, DotW, Min, Max, Rain, Evap, Sun, mwDir, mwSpd, mwTime, pmTemp, pmRH, pmCld, pmwDir, pmwSpd, pmMSLP, pmTemp, pmRH, pmCld, pmwDir, pmwSpd, pmMSLP");
+		
+		while (x < doM) {
+			Report report = new Report(x);
+			report = Report.BuildReport(Location, report.line);
+			
+			string = report.date+", "+report.DotW+", "+report.minTemp+", "+report.maxTemp
+					+", "+report.rain+", "+report.evap+", "+report.sun+", "+report.maxWind.dir
+					+", "+report.maxWind.spd+", "+report.maxWindTime+", "+report.amReport.Temp
+					+", "+report.amReport.RH+", "+report.amReport.Cld+", "+report.amReport.Wind.dir
+					+", "+report.amReport.Wind.spd+", "+report.amReport.MSLP+", "+report.pmReport.Temp
+					+", "+report.pmReport.RH+", "+report.pmReport.Cld+", "+report.pmReport.Wind.dir
+					+", "+report.pmReport.Wind.spd+", "+report.pmReport.MSLP;
+
+			System.out.println(string);
+			
+			x++;
+		}
 	}
 }

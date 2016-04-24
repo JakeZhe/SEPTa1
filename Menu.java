@@ -15,7 +15,7 @@ public class Menu {
 			do{
 			System.out.println("\n" + "     Menu     ");
 			System.out.println("Australia				1");
-			System.out.println("Artantica				2");
+			System.out.println("Antarctica				2");
 			System.out.println("Offshore				3");
 			System.out.println("Favourite				4");
 			System.out.println("Quit					5");
@@ -72,6 +72,11 @@ public class Menu {
 				
 				Scanner scanner2 = new Scanner(System.in);
 				int location1 = scanner.nextInt();
+				if (location1 == 1)
+					Report.printReport("Melbourne");
+				if (location1 == 2)
+					Report.printReport("Geelong");
+				
 				break;
 			
 			case 2: 
@@ -96,23 +101,17 @@ public class Menu {
 			Scanner scanner = new Scanner(System.in);
 			int choice = scanner.nextInt();
 			
+			String Location;
+			
 			switch(choice){
 			case 1: 
-				String Location = new String("Casey");
-				Calendar cal = Calendar.getInstance();
-				//int doM = cal.get(Calendar.DAY_OF_MONTH);
-				int doM = 24;
-				int x = 0;
-				
-				while (x < doM) {
-					Report tempReport = new Report(x);
-					tempReport = Report.BuildReport(Location, tempReport.line);
-					System.out.println(Report.printReport(tempReport));
-					x++;
-				}
+				Location = new String("Casey");
+				Report.printReport(Location);
 				break;
 			
 			case 2:
+				Location = new String("Davis");
+				Report.printReport(Location);
 				break;
 			}
 			 
@@ -129,14 +128,22 @@ public class Menu {
 			Scanner scanner = new Scanner(System.in);
 			int choice = scanner.nextInt();
 			
+			String Location;
+			
 			switch(choice){
 			case 1: 
+				Location = new String("MacquarieIsland");
+				Report.printReport(Location);
 				break;
 			
 			case 2:
+				Location = new String("ChristmasIsland");
+				Report.printReport(Location);
 				break;
 				
 			case 3:
+				Location = new String("FlindersReef");
+				Report.printReport(Location);
 				break;
 			}
 		}
