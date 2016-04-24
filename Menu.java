@@ -64,7 +64,7 @@ public class Menu {
 			case 1: 
 				System.out.println("\n" + "     Choose City     ");
 				System.out.println("Melbourne				1");
-				System.out.println("Geelong					2");
+				System.out.println("Geelong				2");
 				System.out.println("\n" +"Your choice: ");
 				
 				Scanner scanner2 = new Scanner(System.in);
@@ -74,7 +74,7 @@ public class Menu {
 			case 2: 
 				System.out.println("\n" + "     Choose City     ");
 				System.out.println("Brisbane				1");
-				System.out.println("Cairns					2");
+				System.out.println("Cairns				2");
 				System.out.println("\n" +"Your choice: ");
 				
 				Scanner scanner3 = new Scanner(System.in);
@@ -88,6 +88,7 @@ public class Menu {
 			System.out.println("\n" + "     Choose Location     ");
 			System.out.println("Casey				1");
 			System.out.println("Davis				2");
+			System.out.println("Macquarie Island			3");
 			System.out.println("\n" +"Your choice: ");
 			
 			Scanner scanner = new Scanner(System.in);
@@ -98,6 +99,9 @@ public class Menu {
 				break;
 			
 			case 2:
+				break;
+				
+			case 3:
 				break;
 			}
 			 
