@@ -1,5 +1,5 @@
 package septa1;
 
-public abstract class AmReport extends TimeReport {
+public class AmReport extends TimeReport {
 	
 }

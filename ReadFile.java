@@ -4,17 +4,17 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.StringTokenizer;
 
 public class ReadFile {
 
 	
 	
-	public String[] GetData(String location) {
+	public static String[] GetData(String location) {
 		
 		int maxLines = 31;
 		
 		File file = new File(location+"Report.txt");
+		System.out.println(file.getAbsolutePath());
 		String[] lines = new String[maxLines];
 		
 		try {
@@ -28,6 +28,8 @@ public class ReadFile {
 				lines[x] = s;
 				x++;
 			}
+			bReader.close();
+			fReader.close();
 				
 		}	catch (IOException e) {
 			System.out.print(e);
