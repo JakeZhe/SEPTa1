@@ -36,47 +36,48 @@ public class Report extends ReadFile {
 				
 				if (!COMMAS.contains(stemp)) {
 					
-					if (count == 20)
+					switch(count) {
+					case 20:
 						report[y].date = stemp;
-					if (count == 19)
+					case 19:
 						report[y].DotW = stemp;
-					if (count == 18)
+					case 18:
 						report[y].minTemp = Float.valueOf(stemp);
-					if (count == 17)
+					case 17:
 						report[y].maxTemp = Float.valueOf(stemp);
-					if (count == 16)
+					case 16:
 						report[y].rain = Float.valueOf(stemp);
-					if (count == 15)
+					case 15:
 						report[y].maxWind.dir = stemp;
-					if (count == 14)
+					case 14:
 						report[y].maxWind.spd = Integer.parseInt(stemp);
-					if (count == 13)
+					case 13:
 						report[y].maxWindTime = stemp;
-					if (count == 12)
+					case 12:
 						report[y].amReport.Temp = Float.valueOf(stemp);
-					if (count == 11)
+					case 11:
 						report[y].amReport.RH = Integer.parseInt(stemp);
-					if (count == 10)
+					case 10:
 						report[y].amReport.Cld = Integer.parseInt(stemp);
-					if (count == 9)
+					case 9:
 						report[y].amReport.Wind.dir = stemp;
-					if (count == 8)
+					case 8:
 						report[y].amReport.Wind.spd = Integer.parseInt(stemp);
-					if (count == 7)
+					case 7:
 						report[y].amReport.MSLP = Float.valueOf(stemp);
-					if (count == 6)
+					case 6:
 						report[y].pmReport.Temp = Float.valueOf(stemp);
-					if (count == 5)
+					case 5:
 						report[y].pmReport.RH = Integer.parseInt(stemp);
-					if (count == 4)
+					case 4:
 						report[y].pmReport.Cld = Integer.parseInt(stemp);
-					if (count == 3)
+					case 3:
 						report[y].pmReport.Wind.dir = stemp;
-					if (count == 2)
+					case 2:
 						report[y].pmReport.Wind.spd = Integer.parseInt(stemp);
-					if (count == 1)
+					case 1:
 						report[y].pmReport.MSLP = Float.valueOf(stemp);
-					
+					}
 					
 				}			
 		    }
