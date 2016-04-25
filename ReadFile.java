@@ -11,8 +11,10 @@ public class ReadFile {
 	
 	public static String[] GetData(String location) {
 		
+		//max amount of days in a month
 		int maxLines = 31;
 		
+		//uses location parameter to choose from txt files in working directory.
 		File file = new File(location+"Report.txt");
 		String[] lines = new String[maxLines];
 		
@@ -23,6 +25,7 @@ public class ReadFile {
 			int x = 0;
 			String s;
 				
+			//assigns each line into the array, after checking if a line exists.
 			while((s = bReader.readLine()) != null) {
 				lines[x] = s;
 				x++;
@@ -35,6 +38,7 @@ public class ReadFile {
 			System.exit(0);
 		}
 		
+		//return the array
 		return lines;
 		
 	}

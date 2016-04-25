@@ -76,7 +76,6 @@ public class Menu {
 					Report.printReport("Melbourne");
 				if (location1 == 2)
 					Report.printReport("Geelong");
-				
 				break;
 			
 			case 2: 
@@ -87,6 +86,10 @@ public class Menu {
 				
 				Scanner scanner3 = new Scanner(System.in);
 				int location2 = scanner.nextInt();
+				if (location2 == 1)
+					Report.printReport("Brisbane");
+				if (location2 == 2)
+					Report.printReport("Cairns");
 				break;
 			}
 		}
@@ -151,12 +154,5 @@ public class Menu {
 		public static void favourite()
 		{
 			System.out.println("Hello World");
-		}
-		
-
-		public static void main(String[] args)
-		{
-			Menu test = new Menu();
-			Menu.menu(); 
 		}
 }

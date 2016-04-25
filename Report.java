@@ -1,6 +1,5 @@
 package septa1;
 
-import java.util.Calendar;
 import java.util.StringTokenizer;
 
 public class Report extends ReadFile {
@@ -18,6 +17,7 @@ public class Report extends ReadFile {
 	public AmReport amReport;
 	public PmReport pmReport;
 	
+	//Constructor for Report only requires line to be initialised before its functions are called as the rest of the data is read from a txt file.
 	public Report(int line) {
 		this.line = line;
 	}
@@ -28,6 +28,7 @@ public class Report extends ReadFile {
 		String TAB = "\t";
 		int count;
 		
+		//initialise data classes
 		Report report = new Report(line);
 		report.maxWind = new Wind();
 		report.amReport = new AmReport();
@@ -35,6 +36,7 @@ public class Report extends ReadFile {
 		report.pmReport = new PmReport();
 		report.pmReport.Wind = new Wind();
 		
+		//fills Data array with lines of string from txt file.
 		Data = GetData(location);
 		
 		StringTokenizer tk = new StringTokenizer(Data[line], TAB, false);
@@ -45,6 +47,8 @@ public class Report extends ReadFile {
 				
 			if (!TAB.contains(stemp)) {
 					
+				//tokenize the strings, assign each token to respective field
+				//if a token is empty initialise each field blank where possible (for strings), or 0 (for numbers).
 				switch(count) {
 				
 				case 22:
@@ -208,6 +212,8 @@ public class Report extends ReadFile {
 	{
 		String string = new String();
 
+		//this can be used to check in real time what day of the month it is and read data from the txt files provided they are up to date as well
+		//however since we have hard coded the data, it is not being fetched in real time and a variable is used instead as if it was the 24th of the month.
 		//Calendar cal = Calendar.getInstance();
 		//int doM = cal.get(Calendar.DAY_OF_MONTH);
 		int doM = 24;
@@ -227,6 +233,7 @@ public class Report extends ReadFile {
 					+", "+report.pmReport.RH+", "+report.pmReport.Cld+", "+report.pmReport.Wind.dir
 					+", "+report.pmReport.Wind.spd+", "+report.pmReport.MSLP;
 
+			//prints the data, only formatted by commas.
 			System.out.println(string);
 			
 			x++;
