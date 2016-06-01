@@ -4,6 +4,8 @@ import java.util.Calendar;
 import java.util.Scanner;
 import java.io.*;
 
+import refresh.ReadURL;
+
 public class Menu {
 	
 	
@@ -76,10 +78,16 @@ public class Menu {
 				
 				Scanner scanner2 = new Scanner(System.in);
 				int location1 = scanner.nextInt();
-				if (location1 == 1)
+				if (location1 == 1){
+					System.out.println("Report for Melbourne");
 					Report.printReport("0");
-				if (location1 == 2)
+					ReadURL.forecast("-37.8200","144.9650");
+				}
+				if (location1 == 2){
+					System.out.println("Report for Geelong");
 					Report.printReport("1");
+					ReadURL.forecast("-38.1493","144.3598");
+				}
 				break;
 			
 			case 2: 
@@ -90,10 +98,16 @@ public class Menu {
 				
 				Scanner scanner3 = new Scanner(System.in);
 				int location2 = scanner.nextInt();
-				if (location2 == 1)
+				if (location2 == 1){
+					System.out.println("Report for Brisbane");
 					Report.printReport("2");
-				if (location2 == 2)
+					ReadURL.forecast("-27.4685","153.0234");
+				}	
+				if (location2 == 2){
+					System.out.println("Report for Cairns");
 					Report.printReport("3");
+					ReadURL.forecast("-16.9196","145.7737");
+				}
 				break;
 			}
 		}
@@ -113,12 +127,16 @@ public class Menu {
 			switch(choice){
 			case 1: 
 				Location = new String("4");
+				System.out.println("Report for Casey");
 				Report.printReport(Location);
+				System.out.println("Forecast unavailable");
 				break;
 			
 			case 2:
 				Location = new String("5");
+				System.out.println("Report for Davis");
 				Report.printReport(Location);
+				System.out.println("Forecast unavailable");
 				break;
 			}
 			 
@@ -140,17 +158,23 @@ public class Menu {
 			switch(choice){
 			case 1: 
 				Location = new String("6");
+				System.out.println("Report for Macquarie Island");
 				Report.printReport(Location);
+				ReadURL.forecast("-54.6318","158.8618");
 				break;
 			
 			case 2:
 				Location = new String("7");
+				System.out.println("Report for Christmas Island");
 				Report.printReport(Location);
+				ReadURL.forecast("-10.4878","105.6330");
 				break;
 				
 			case 3:
 				Location = new String("8");
+				System.out.println("Report for Flinders Reef");
 				Report.printReport(Location);
+				ReadURL.forecast("-26.9790","153.4850");
 				break;
 			}
 		}
