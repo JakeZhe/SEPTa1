@@ -222,19 +222,20 @@ public class Report extends ReadFile {
 		int doM = 24;
 		int x = 0;
 		
-		System.out.println("Date, DotW, Min, Max, Rain, Evap, Sun, mwDir, mwSpd, mwTime, pmTemp, pmRH, pmCld, pmwDir, pmwSpd, pmMSLP, pmTemp, pmRH, pmCld, pmwDir, pmwSpd, pmMSLP");
+		System.out.println("Date	DotW	Min	Max	Rain	Evap	Sun	mwDir	mwSpd	mwTime	pmTemp	pmRH	pmCld	pmwDir	pmwSpd	pmMSLP	pmTemp	pmRH	pmCld	pmwDir	pmwSpd	pmMSLP");
 		
 		while (x < doM) {
 			Report report = new Report(x);
 			report = Report.BuildReport(Location, report.line);
 			
-			string = report.date+", "+report.DotW+", "+report.minTemp+", "+report.maxTemp
-					+", "+report.rain+", "+report.evap+", "+report.sun+", "+report.maxWind.dir
-					+", "+report.maxWind.spd+", "+report.maxWindTime+", "+report.amReport.Temp
-					+", "+report.amReport.RH+", "+report.amReport.Cld+", "+report.amReport.Wind.dir
-					+", "+report.amReport.Wind.spd+", "+report.amReport.MSLP+", "+report.pmReport.Temp
-					+", "+report.pmReport.RH+", "+report.pmReport.Cld+", "+report.pmReport.Wind.dir
-					+", "+report.pmReport.Wind.spd+", "+report.pmReport.MSLP;
+			string = report.date+"\t"+report.DotW+"\t"+report.minTemp+"\t"+report.maxTemp
+					+"\t"+report.rain+"\t"+report.evap+"\t"+report.sun+"\t"+report.maxWind.dir
+					+"\t"+report.maxWind.spd+"\t"+report.maxWindTime+"\t"+report.amReport.Temp
+					+"\t"+report.amReport.RH+"\t"+report.amReport.Cld+"\t"+report.amReport.Wind.dir
+					+"\t"+report.amReport.Wind.spd+"\t"+report.amReport.MSLP+"\t"+report.pmReport.Temp
+					+"\t"+report.pmReport.RH+"\t"+report.pmReport.Cld+"\t"+report.pmReport.Wind.dir
+					+"\t"+report.pmReport.Wind.spd+"\t"+report.pmReport.MSLP;
+
 
 			//prints the data, only formatted by commas.
 			System.out.println(string);
